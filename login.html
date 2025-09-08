@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <script>
+    // ----- Enter your login credentials here -----
+    const correctLogin = "Ustim";  // <- put your login here
+    const correctPassword = "2014";  // <- put your password here
+    // --------------------------------------------
+
+    function checkLogin(event) {
+      event.preventDefault(); // Prevent page from reloading
+
+      const login = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (login === correctLogin && password === correctPassword) {
+        // If correct, go to welcome.html
+        window.location.href = "admin.html";
+      } else {
+        alert("Incorrect login or password!");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Login</h2>
+  <form onsubmit="checkLogin(event)">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" required><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" required><br><br>
+
+    <button type="submit">Login</button>
+    <h1></h1>
+    <button><a href="index.html">Back</a></button>
+  </form>
+</body>
+</html>
